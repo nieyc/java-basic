@@ -1,0 +1,28 @@
+{
+  "bean": [
+    {
+      "id": "person",
+      "class": "reflex.Person",
+      "fields":[{"name":"age","value":43},{"name":"name","value":"lily"}]
+    },
+    {
+      "id": "user",
+      "class": "reflex.spring.User",
+      "fields":[{"name":"id","value":101},{"name":"name","value":"lily"}]
+    },
+    {
+      "id": "comlex",
+      "class": "reflex.spring.ComplexBean",
+      "fields": [
+        {
+          "name": "name",
+          "value": "complex-bean-name"
+        },
+        {
+          "name": "RefUser",
+          "ref": "user"
+        }
+      ]
+    }
+  ]
+}

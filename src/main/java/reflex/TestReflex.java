@@ -5,7 +5,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import org.junit.Test;
 
-//http://www.importnew.com/17616.html
+
 public class TestReflex {
 	
 

@@ -1,0 +1,12 @@
+{
+  "bean": [
+    {
+      "id": "person",
+      "class": "reflex.Person"
+    },
+    {
+      "id": "user",
+      "class": "reflex.spring.User"
+    }
+  ]
+}
