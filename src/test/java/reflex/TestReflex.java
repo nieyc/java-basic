@@ -3,8 +3,8 @@ package reflex;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import org.junit.Test;
 
+import org.junit.Test;
 
 public class TestReflex {
 	
@@ -21,7 +21,7 @@ public class TestReflex {
 	 * @since 0.1
 	 * @see
 	 */
-	//@Test
+	@Test
 	public void TestFieldAndMethod() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchFieldException, SecurityException{
 		Class<?> clazz =Class.forName("reflex.Person");
 		Object o=clazz.newInstance();
@@ -119,7 +119,7 @@ public class TestReflex {
 	 * @since 0.1
 	 * @see
 	 */
-	@Test
+	//@Test
 	public void TestMethod() throws ClassNotFoundException, InstantiationException, IllegalAccessException,
 	NoSuchMethodException, SecurityException, IllegalArgumentException, InvocationTargetException{
 		Class<?> clazz =Class.forName("reflex.Person");
@@ -134,6 +134,5 @@ public class TestReflex {
 		Method sayMethod =clazz.getMethod("say", new Class[] { String.class,String.class });  
 		sayMethod.invoke(o, new Object[] { "张三","女" });
 	}
-
 
 }

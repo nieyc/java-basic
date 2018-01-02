@@ -1,14 +1,13 @@
 package proxy.staticProxy;
 
-import org.junit.Test;
+
 
 public class TestStaticProxy {
 	
-	@Test
-	public void test() {
+	
+	public static void main(String[] args) {
 		Subject subjectProxy=new SubjectProxy();
 		subjectProxy.doSomeThing();
-		
 	}
 
 }

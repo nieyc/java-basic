@@ -26,7 +26,8 @@
 		    <artifactId>guava</artifactId>
 		    <version>23.6-jre</version>
 		</dependency>
-		
-	</dependencies>
+      
+
+    </dependencies>
   
 </project>
