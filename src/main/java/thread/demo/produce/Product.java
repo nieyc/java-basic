@@ -6,7 +6,7 @@ import java.util.Random;
  * @author:nieyc
  * @company:panchan
  * @Date:created in ${Time} ${Date}
- * @Description
+ * @Description 一个经典的多线程下生产者，消费者的例子。生产一个商品，消费一个商品
  **/
 public class Product {
 

@@ -5,6 +5,7 @@ package thread.demo.produce;
  * @company:panchan
  * @Date:created in ${Time} ${Date}
  * @Description
+ * @see thread.demo.good.TestGood
  **/
 public class TestProduct {
 
