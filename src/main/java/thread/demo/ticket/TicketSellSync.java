@@ -4,7 +4,8 @@ package thread.demo.ticket;
  * @author:nieyc
  * @company:panchan
  * @Date:created in ${Time} ${Date}
- * @Description 卖票方案解决1：使用synchronized 同步锁，注意不能用在run()方法上，否则只执行1个线程，其他的没有机会，方案2见 @see TicketSellLock
+ * @Description 卖票方案解决1：使用synchronized 同步锁，注意不能用在run()方法上，否则只执行1个线程，其他的没有机会，方案2见
+ * @see TicketSellLock
  **/
 public class TicketSellSync implements  Runnable  {
     public   int ticketNum=50;

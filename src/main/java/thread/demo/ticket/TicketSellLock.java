@@ -7,12 +7,14 @@ import java.util.concurrent.locks.ReentrantLock;
  * @author:nieyc
  * @company:panchan
  * @Date:created in ${Time} ${Date}
- * @Description 卖票方案解决1：ReentrantLock 锁，方案1见 @see TicketSellSync
+ * @Description 卖票方案解决1：ReentrantLock 锁，方案1见
+ * @see TicketSellSync
  **/
 public class TicketSellLock  implements  Runnable {
 
     public   int ticketNum=50;
     Lock l=new ReentrantLock();
+
 
     @Override
     public void run() {
@@ -40,5 +42,6 @@ public class TicketSellLock  implements  Runnable {
         ta.start();
         tb.start();
         tc.start();
+
     }
 }

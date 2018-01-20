@@ -6,11 +6,20 @@ package thread.threadLocal;
  * @Date:created in 17:53 2018/1/17
  * @Description
  * @see https://www.cnblogs.com/dolphin0520/p/3920407.html
+ * @see https://docs.oracle.com/javase/7/docs/api/java/lang/ThreadLocal.html
  **/
 public class MyThreadLocal  {
 
-    ThreadLocal<Long> longLocal=new ThreadLocal<Long>();
-    ThreadLocal<String> stringLocal=new ThreadLocal<String>();
+    ThreadLocal<Long> longLocal=new ThreadLocal<Long>(){
+        protected Long initialValue() {
+            return Thread.currentThread().getId();
+        };
+    };
+    ThreadLocal<String> stringLocal=new ThreadLocal<String>(){
+        protected String initialValue() {
+            return Thread.currentThread().getName();
+        };
+    };
 
     public void set() {
         longLocal.set(Thread.currentThread().getId());
