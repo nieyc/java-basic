@@ -44,7 +44,10 @@ public class TestAutomic {
 
     /**
      @Author:nieyc
-     @Description:开启10个线程，执行doSomeThing（），执行业务逻辑，理论上应该是30000，实际结果=30000,此处说明通过cas解决并发问题
+     @Description:开启10个线程，执行doSomeThing（），执行业务逻辑，理论上应该是30000，实际结果会偶尔出现小于30000,此处说明通过cas不能解决并发问题
+                      海纳网友回复：
+                       其实这个程序是不能保证结果一定是30000的，我写的那个也是一样的，不能保证的。只是说概率很大。
+                       因为线程抢不到permit就会放弃这次操作，假如有一个线程拿着permit却因为调度的原因而一直没有执行。这样后面的其他线程就一直拿不到permit了。
      @Date:11:28 2018/1/19
      **/
     public static void main(String[] args) {
