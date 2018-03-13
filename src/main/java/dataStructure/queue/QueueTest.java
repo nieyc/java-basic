@@ -5,6 +5,7 @@ import java.util.Queue;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.PriorityBlockingQueue;
 
 /**
  * @author:nieyc
@@ -99,11 +100,76 @@ public class QueueTest {
         }
     }
 
+
+    /**
+     @Author:nieyc
+     @Description: 具有优先级的阻塞队列，如果不初始化大小，同样是无界的队列，容易outOfMemory，队列中的对象如果实现了
+     Comparable接口，那么队列就具有优先性。如下所示，PriorityBlockingQueue 存放的User对象实现了Comparable接口
+     @Date:21:22 2018/3/10
+     **/
+    public void TestPriorityBlockingQueue(){
+        BlockingQueue<User> queue=new PriorityBlockingQueue<User>();
+            try {
+                queue.put(new User(1,"nie1"));
+                queue.put(new User(10,"nie10"));
+                queue.put(new User(3,"nie3"));
+                queue.put(new User(90,"nie90"));
+                queue.put(new User(12,"nie12"));
+                queue.put(new User(7,"nie7"));
+                queue.put(new User(56,"nie56"));
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            for(User user:queue){
+                try {
+                    System.out.println(queue.take().name);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
+
+    }
+
+
+
+    static class User implements Comparable<User> {
+        int age;
+        String name;
+        public User(int age,String name){
+            this.age=age;
+            this.name=name;
+        }
+        /**
+         @Author:nieyc
+         @Description:a negative integer, zero, or a positive integer as this object is less than, equal to, or greater than the specified object.
+                  返回值： 负整数，零，正整数 来表示当前对象和指定对象的比较
+         @Date:21:49 2018/3/10
+         **/
+        @Override
+        public int compareTo(User o) {
+           if(this.age>o.age){
+                return 1;
+            }else{
+                return -1;
+            }
+
+        }
+    }
+
+
+    public void TestDelyedQueue(){
+
+    }
+
     public static void main(String[] args) {
         QueueTest main=new QueueTest();
        // main.TestBasicQueue();
        // main.TestArrayBlockingQueue();
-        main.TestLinkedBlockingQueue();
+       // main.TestLinkedBlockingQueue();
+        //main.TestPriorityBlockingQueue();
 
 
 
