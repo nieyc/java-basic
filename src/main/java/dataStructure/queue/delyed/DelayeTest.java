@@ -8,7 +8,7 @@ import java.util.concurrent.Executors;
  * @author:nieyc
  * @company:panchan
  * @Date:created in 15:47 2018/3/12
- * @Description
+ * @Description：延时队列，业务场景经常用到的地方，订单超时关闭，可以精确到秒
  **/
 public class DelayeTest {
     public static void main(String[] args) {
