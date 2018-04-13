@@ -1,10 +1,7 @@
 package dataStructure.queue.message;
 
 
-import java.util.HashSet;
-import java.util.Random;
-import java.util.Set;
-import java.util.Timer;
+import java.util.*;
 
 
 /**
@@ -15,17 +12,21 @@ import java.util.Timer;
  **/
 public class CircleQueue<E> {
     public  int currentIndex;
+
     public Set<Task> taskSet =new HashSet<Task>();
-    //public int circleNum;
+    public List<Task> taskList=new ArrayList<Task>();
+
     public CircleQueue() {
     }
 
     public void put(Task task){
-        taskSet.add(task);
+        taskList.add(task);
     }
 
     public int getSize(){
-        return taskSet.size();
+        return taskList.size();
     }
+
+
 
 }
