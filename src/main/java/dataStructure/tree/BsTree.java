@@ -46,7 +46,7 @@ public class BsTree {
                         q=q.rightChild;
                     }
 
-                }else {  //要插入的值比当前节点值要大，插入当前节点的右孩子
+                }else {  //要插入的值比当前节点值要小，插入当前节点的左孩子
                      if(q.leftChild==null){
                          q.leftChild=p;
                          p.parent=q;
