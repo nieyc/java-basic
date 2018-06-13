@@ -13,7 +13,8 @@ public class TestSort {
         int[] myArray = {1, 4, 3, 7, 5, 8, 6, 2};
        // Sorter s=new BubbleSort();
         //Sorter s=new InsertionSorter();
-        Sorter s=new SelectionSort();
+       // Sorter s=new SelectionSort();
+        Sorter s=new QueueSort();
         s.sort(myArray);
         Arrays.stream(myArray).forEach(System.out::println);
     }

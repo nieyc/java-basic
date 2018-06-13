@@ -9,6 +9,9 @@ public class Test {
 		System.out.println(number);
 		printInfo(number);
 		System.out.println(DEFAULT_INITIAL_CAPACITY);
+
+		//右移2位，高位补0，10100 右移动2位变为00101 ,之前十进制是20，现在变成5
+		System.out.println(number>>>2);
 	
 	}
 	
