@@ -25,4 +25,31 @@ public class SelectionSort implements  Sorter {
             }
         }
     }
+
+
+
+     /**
+       @Author:nieyc
+       @Description: 选择排序，实现从小到大
+       @Date:14:02 2018/6/11
+      **/
+    public static void main(String[] args) {
+        int[] arr={9,7,11,8,5,6,2,1};
+        int pivot,pos=-1;
+        for (int i = 0; i <arr.length ; i++) {
+            pivot=Integer.MAX_VALUE;
+            for (int j=i;j<arr.length;j++){
+                if(pivot>arr[j]){
+                    pos=j;
+                    pivot=arr[j];
+                }
+            }
+            arr[pos]=arr[i];
+            arr[i]=pivot;
+            System.out.println(arr);
+
+        }
+        System.out.println(arr);
+
+    }
 }
