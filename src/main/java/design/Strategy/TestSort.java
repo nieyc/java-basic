@@ -14,7 +14,8 @@ public class TestSort {
        // Sorter s=new BubbleSort();
         //Sorter s=new InsertionSorter();
        // Sorter s=new SelectionSort();
-        Sorter s=new QueueSort();
+       // Sorter s=new QueueSort();
+        Sorter s=new QuickSort();
         s.sort(myArray);
         Arrays.stream(myArray).forEach(System.out::println);
     }
