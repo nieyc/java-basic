@@ -20,6 +20,7 @@ public class BubbleSort implements  Sorter {
                     arr[i] = temp;
                 }
             }
+            System.out.println("i:"+i);
         }
     }
 

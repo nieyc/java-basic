@@ -6,39 +6,53 @@ import java.util.Arrays;
  * @author:nieyc
  * @company:panchan
  * @Date:created in 15:58 2018/6/15
- * @Description
+ * @Description:挖坑理解
+ * https://blog.csdn.net/morewindows/article/details/6684558
  **/
-public class Quick {
 
-    public static int[] change(int[] arr){
-        return arr;
+public class Quick
+{
+    public static void main(String args[])
+    {
+        Quick quicksort = new Quick();
+        //int[] arrays = new int[]{ 9, 12, 2, 13, 3, 14, 4, 15, 5, 16,  17, 177, 18, 8, 19 };
+        int[] arrays = new int[]{ 9, 12, 2, 13, 3, 14, 4};
+        quicksort.quickSort(arrays);
+        System.out.println(Arrays.toString(arrays));
     }
 
-    public static void main(String[] args) {
-        int[] arr={66,  13 , 51,  76,  81,  26 , 57 , 23,  69};
-        int left=0;
-        int right=arr.length-1;
-        int key=arr[0];
-        for(int i=0;i<arr.length;i++){
-            if(arr[right]<key){
-                int temp=0;
-                temp=arr[right];
-                arr[right]=key;
-                arr[0]=temp;
-            }
-            if(key<arr[i]){
-                int temp=0;
-                temp=arr[i];
-                arr[i]=key;
-                arr[left]=temp;
-            }
-            right--;
-            left++;
-            if(right==left){
-                key=arr[0];
-            }
-        }
+    private void quickSort(int[] arrays)
+    {
+        subQuickSort(arrays, 0, arrays.length - 1);
+    }
 
-        Arrays.stream(arr).forEach(System.out::println);
+    private void subQuickSort(int[] arrays, int start, int end)
+    {
+        if (start >= end) {
+            return;
+        }
+        int middleIndex = subQuickSortCore(arrays, start, end);
+        subQuickSort(arrays, start, middleIndex - 1);
+        subQuickSort(arrays, middleIndex + 1, end);
+    }
+
+    private int subQuickSortCore(int[] arrays, int start, int end)
+    {
+        int middleValue = arrays[start];
+        while (start < end)
+        {
+            while (arrays[end] >= middleValue && start < end)
+            {
+                end--;
+            }
+            arrays[start] = arrays[end];
+            while (arrays[start] <= middleValue && start < end)
+            {
+                start++;
+            }
+            arrays[end] = arrays[start];
+        }
+        arrays[start] = middleValue;
+        return start;
     }
 }
