@@ -27,7 +27,9 @@ public class ProxyHandler  implements InvocationHandler{
 		Object result = null;
 		// 这里就可以进行所谓的AOP编程了
 		// 在调用具体函数方法前，执行功能处理
+		System.out.println("处理业务逻辑之前记录日志消息");
 		result = method.invoke(tar, args);
+		System.out.println("处理业务逻辑之后记录日志消息");
 		// 在调用具体函数方法后，执行功能处理
 		return result;
 	}

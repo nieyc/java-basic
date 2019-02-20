@@ -57,5 +57,6 @@
     <orderEntry type="library" name="Maven: org.apache.cxf:cxf-rt-bindings-xml:3.1.9" level="project" />
     <orderEntry type="library" name="Maven: org.apache.cxf:cxf-rt-frontend-simple:3.1.9" level="project" />
     <orderEntry type="library" name="Maven: org.apache.cxf:cxf-rt-ws-addr:3.1.9" level="project" />
+    <orderEntry type="library" name="Maven: cglib:cglib:3.1" level="project" />
   </component>
 </module>

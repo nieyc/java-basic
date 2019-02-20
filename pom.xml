@@ -61,8 +61,13 @@
 			<artifactId>cxf-rt-frontend-jaxws</artifactId>
 			<version>3.1.9</version>
 		</dependency>
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>3.1</version>
+        </dependency>
 
 
-	</dependencies>
+    </dependencies>
   
 </project>
