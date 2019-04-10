@@ -23,6 +23,7 @@ public class Thread1 implements  Runnable {
     /**
      @Author:nieyc
      @Description: 优先级的设定，谁先执行
+                   优先级低只是意味着获得调度的概率低。并不是绝对先调用优先级高的线程后调用优先级低的线程。具体各个操作系统也不同
      @Date:18:16 2018/1/12
      **/
     public static void main(String[] args) {
@@ -36,6 +37,8 @@ public class Thread1 implements  Runnable {
         ta.start();
         new Thread(new Thread1("C")).start();
         new Thread(new Thread1("D")).start();
+        //默认线程优先级是5
+        System.out.println(Thread.currentThread().getPriority());  
 
     }
 }
