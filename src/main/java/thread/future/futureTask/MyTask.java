@@ -18,7 +18,8 @@ public class MyTask implements Callable<Integer> {
     @Override
     public Integer call() throws Exception {
         System.out.println("task"+ taskName + "开始进行计算");
-        Thread.sleep(5000);
+        int sleepTime = new Random().nextInt(1000);
+        Thread.sleep(sleepTime);
         int result=0;
         int sum = new Random().nextInt(100);
         for (int i = 0; i <sum ; i++) {
@@ -26,5 +27,11 @@ public class MyTask implements Callable<Integer> {
         }
         System.out.println("任务"+taskName+"result:"+result);
         return result;
+    }
+
+
+    public static void main(String[] args) {
+        int sleepTime = new Random().nextInt(1000);
+        System.out.println(sleepTime);
     }
 }

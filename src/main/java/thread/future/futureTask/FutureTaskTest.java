@@ -29,7 +29,7 @@ public class FutureTaskTest {
 
 
     public static void main(String[] args) {
-       // testFutureTask();
+      // testFutureTask();
         testFutureTaskWithPool();
     }
 
@@ -46,7 +46,7 @@ public class FutureTaskTest {
 
         List<FutureTask<Integer>> taskList = new ArrayList<FutureTask<Integer>>();
 
-        for (int i = 0; i <1000 ; i++) {
+        for (int i = 0; i <10 ; i++) {
             FutureTask<Integer> futureTask=new FutureTask<Integer>(new MyTask(String.valueOf(i)));
             taskList.add(futureTask);
             exec.submit(futureTask);
@@ -58,7 +58,7 @@ public class FutureTaskTest {
         for (int i = 0; i <taskList.size() ; i++) {
             try {
                 int result=taskList.get(i).get();
-                System.out.println(result);
+                System.out.println("result:"+result);
                 totalResult=totalResult+result;
             } catch (InterruptedException e) {
                 e.printStackTrace();
