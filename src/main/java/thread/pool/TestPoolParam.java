@@ -1,6 +1,9 @@
 package thread.pool;
 
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
+
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
@@ -35,6 +38,8 @@ Process finished with exit code 0
  **/
 public class TestPoolParam {
 
+    ThreadFactory csswebThreadFactory = new ThreadFactoryBuilder().setNameFormat("demo-pool-%d").build();
+
     ThreadPoolExecutor executor=new ThreadPoolExecutor(2,
             5,
             10,
@@ -43,8 +48,11 @@ public class TestPoolParam {
             // new ThreadPoolExecutor.CallerRunsPolicy()//由调用线程处理该任务,当有任务添加到线程池被拒绝时，线程池会将被拒绝的任务添加到”线程池正在运行的线程”中取运行。
             // new ThreadPoolExecutor.AbortPolicy()//丢弃任务并抛出RejectedExecutionException异常。
             //new ThreadPoolExecutor.DiscardPolicy()//也是丢弃任务，但是不抛出异常
+            csswebThreadFactory,//给线程起个名字，方便日志调试，默认是Executors.defaultThreadFactory()
             new ThreadPoolExecutor.DiscardOldestPolicy()//丢弃队列最前面的任务，然后重新尝试执行任务（重复此过程）
+
     );
+
 
     public class  Order{
         private String orderId;
@@ -92,6 +100,7 @@ public class TestPoolParam {
             Order order=new Order();
             order.setOrderId("order-"+i);
             order.setOrderName("name-"+i);
+
             executor.submit(new createOrder(order));
         }
         System.out.println("任务提交完毕。。。。。。。。。。。。。");

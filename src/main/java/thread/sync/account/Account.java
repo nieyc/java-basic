@@ -14,14 +14,40 @@ import java.math.BigDecimal;
  */
 public class Account {
 
-	String name;
+	String accountName;
 	
 	BigDecimal amount;
 	
-	public Account(String name, BigDecimal amount) {
-	      this.name = name;
+	public Account(String accountName, BigDecimal amount) {
+	      this.accountName = accountName;
 	      this.amount = amount;
 	}
+
+	public Account(String accountName){
+		this.accountName=accountName;
+	}
+
+    public Account(){
+
+    }
+
+    public String getAccountName() {
+        return accountName;
+    }
+
+    public void setAccountName(String accountName) {
+        this.accountName = accountName;
+    }
+
+    public BigDecimal getAmount() {
+        return amount;
+    }
+
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
+    }
+
+
 	
 	/**
 	 * 
@@ -66,4 +92,6 @@ public class Account {
 	 public BigDecimal getBalance() {
 	      return amount;
 	   }
+
+
 }
